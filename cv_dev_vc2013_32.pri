@@ -11,11 +11,7 @@ win32-msvc*{
 
   CONFIG(debug, debug|release) {    
   } else {    
-    LIBS += $${LIB_PATH}/opencv_core300.$${LIB_SUFFIX}
-	LIBS += $${LIB_PATH}/opencv_highgui300.$${LIB_SUFFIX}
-	LIBS += $${LIB_PATH}/opencv_imgproc300.$${LIB_SUFFIX}
-	LIBS += $${LIB_PATH}/opencv_ml300.$${LIB_SUFFIX}
-	LIBS += $${LIB_PATH}/opencv_imgcodecs300.$${LIB_SUFFIX}	
+    LIBS += $${LIB_PATH}/opencv_world300.$${LIB_SUFFIX}	
   } #config end
 
 } #win32 end
