@@ -4,16 +4,23 @@ INCLUDEPATH += $${TBB_PATH}/include
 
 LIB_SUFFIX = a
 
-win32-msvc*{
+win32-msvc2013{
 
   LIB_SUFFIX = lib
+  !contains(QMAKE_TARGET.arch, x86_64) {
+        message("x86 build confirm")
+        LIB_PATH = $${TBB_PATH}/lib/ia32/vc12
+   }else{
+        message("x86_64 build confirm")
+        LIB_PATH = $${TBB_PATH}/lib/intel64/vc12
+   }
 
   CONFIG(debug, debug|release) {
-    LIBS += $${TBB_PATH}/bin/ia32/vc12/tbb_debug.lib
-	LIBS += $${TBB_PATH}/bin/ia32/vc12/tbbmalloc_debug.lib
+    LIBS += $${LIB_PATH}/tbb_debug.lib
+    LIBS += $${LIB_PATH}/tbbmalloc_debug.lib
   } else {    
-    LIBS += $${TBB_PATH}/bin/ia32/vc12/tbb.lib
-	LIBS += $${TBB_PATH}/bin/ia32/vc12/tbbmalloc.lib
+    LIBS += $${LIB_PATH}/tbb.lib
+    LIBS += $${LIB_PATH}/tbbmalloc.lib
   } #config end
 
 } #win32 end
