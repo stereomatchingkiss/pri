@@ -12,12 +12,21 @@ win32-msvc2013{
         LIB_PATH = $${CV_PATH}/x86/vc12/lib
    }else{
         message("x86_64 build confirm")
-        LIB_PATH = $${CV_PATH}/x64/vc12/lib
+        LIB_PATH = $${CV_PATH}/x64/vc12/lib		
    }  
 
   CONFIG(debug, debug|release) {    
   } else {    
-    LIBS += $${LIB_PATH}/opencv_world300.$${LIB_SUFFIX}	
+    #LIBS += $${LIB_PATH}/opencv_world300.$${LIB_SUFFIX}	
+	LIBS += $${LIB_PATH}/opencv_core300.$${LIB_SUFFIX}
+	LIBS += $${LIB_PATH}/opencv_highgui300.$${LIB_SUFFIX}
+	LIBS += $${LIB_PATH}/opencv_imgproc300.$${LIB_SUFFIX}
+	LIBS += $${LIB_PATH}/opencv_imgcodecs300.$${LIB_SUFFIX}
+	LIBS += $${LIB_PATH}/opencv_ml300.$${LIB_SUFFIX}
+	LIBS += $${LIB_PATH}/opencv_imgcodecs300.$${LIB_SUFFIX}	
+	LIBS += $${LIB_PATH}/opencv_videoio300.$${LIB_SUFFIX}
+	LIBS += $${LIB_PATH}/opencv_video300.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/opencv_objdetect300.$${LIB_SUFFIX}	
   } #config end
 
 } #win32 end
