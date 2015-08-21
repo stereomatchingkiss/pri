@@ -8,10 +8,10 @@ win32-msvc2013{
 
   LIB_SUFFIX = lib
   !contains(QMAKE_TARGET.arch, x86_64) {
-        message("x86 build confirm")
+        message("tbb x86 build confirm")
         LIB_PATH = $${TBB_PATH}/lib/ia32/vc12
    }else{
-        message("x86_64 build confirm")
+        message("tbb x64 build confirm")
         LIB_PATH = $${TBB_PATH}/lib/intel64/vc12
    }
 
