@@ -1,4 +1,4 @@
-BOOST_PATH = $$PWD/../3rdLibs/boost/boost_1_58_0
+BOOST_PATH = $$PWD/../3rdLibs/boost/boost_1_59_0
 
 INCLUDEPATH += $${BOOST_PATH}
 
@@ -14,6 +14,7 @@ win32-msvc2013{
         ## Windows x86 (32bit) specific build here
    }else{
         message("boost x64 build confirm")
+		LIBS += -L$${BOOST_PATH}/lib64-msvc-12.0
         ## Windows x64 (64bit) specific build here
    }
 
