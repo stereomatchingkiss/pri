@@ -1,7 +1,7 @@
-include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/boost.txt)
-include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/lapack.txt)
-include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/libxml2.txt)
-include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/armadillo.txt)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/boost.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/lapack.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/libxml2.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/armadillo.cmake)
 
 add_definitions(-DNOMINMAX)
 
