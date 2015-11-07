@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED( VERSION 3.1 )
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/opencv/opencv-3.0.0/build/include)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/opencv/opencv-3.0.0/build/include)
 
 if(WIN32)
     #C:\Users\yyyy\Qt\3rdLibs\opencv\opencv-3.0.0\build_vc14\bin\Release
