@@ -1,8 +1,8 @@
 CMAKE_MINIMUM_REQUIRED( VERSION 3.1 )
 
 if(WIN32)
-    set(LAPACK_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/lapack/lapack-3.5.0/bin)
-    set(BLAS_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/openBlas/bin)
+    set(LAPACK_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/lapack/lapack-3.5.0/bin)
+    set(BLAS_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/openBlas/bin)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         if(MSVC14)
             if(CMAKE_BUILD_TYPE MATCHES Release)

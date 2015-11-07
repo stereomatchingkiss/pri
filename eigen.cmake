@@ -1,1 +1,1 @@
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/eigen/eigen-eigen-bdd17ee3b1b3)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/eigen/eigen-eigen-bdd17ee3b1b3)

@@ -1,13 +1,13 @@
-include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/boost.cmake)
-include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/lapack.cmake)
-include(${CMAKE_CURRENT_SOURCE_DIR}/../pri/armadillo.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/../pri/boost.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/../pri/lapack.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/../pri/armadillo.cmake)
 
 add_definitions(-DNOMINMAX)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/mlpack/mlpack/src)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/mlpack/mlpack/src)
 
 if(WIN32)
-    set(MLPACK_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/mlpack/mlpack/bin)
+    set(MLPACK_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/mlpack/mlpack/bin)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         if(MSVC14)
             if(CMAKE_BUILD_TYPE MATCHES Release)
