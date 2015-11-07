@@ -4,7 +4,7 @@ include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/opencv/opencv-3.0.0/bui
 
 if(WIN32)
     #C:\Users\yyyy\Qt\3rdLibs\opencv\opencv-3.0.0\build_vc14\bin\Release
-    set(CV_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/opencv/opencv-3.0.0)
+    set(CV_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/opencv/opencv-3.0.0)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         if(CMAKE_BUILD_TYPE MATCHES Release)
             if(MSVC14)
