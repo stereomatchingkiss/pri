@@ -1,7 +1,7 @@
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/dlib/dlib-18.17)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/dlib/dlib-18.17)
 
 if(WIN32)
-    set(DLIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/dlib/dlib-18.17/bin)
+    set(DLIB_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/dlib/dlib-18.17/bin)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         if(MSVC14)
             if(CMAKE_BUILD_TYPE MATCHES Release)
