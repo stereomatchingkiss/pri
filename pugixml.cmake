@@ -3,4 +3,4 @@ CMAKE_MINIMUM_REQUIRED( VERSION 3.1 )
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/pugixml/1.7)
 
 SET(PUGIXML_FORMAT_ADD_TO_EXECUTEABLE
-${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/pugixml/1.7/pugixml.cpp)
+${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/pugixml/1.7/pugixml/src/pugixml.cpp)
