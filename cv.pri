@@ -1,24 +1,35 @@
-CV_PATH = $$PWD/../3rdLibs/opencv/opencv-3.0.0/build
+CV_PATH = $$PWD/../3rdLibs/opencv/opencv-3.1.0
 
-INCLUDEPATH += $${CV_PATH}/include
+INCLUDEPATH += $${CV_PATH}/build/include
 
 LIB_SUFFIX = a
 
-win32-msvc2013{
+win32-msvc2015{
 
-  LIB_SUFFIX = lib  
-  !contains(QMAKE_TARGET.arch, x86_64) {
-        message("x86 build confirm")
-        LIB_PATH = $${CV_PATH}/x86/vc12/lib
-   }else{
-        message("x86_64 build confirm")
-        LIB_PATH = $${CV_PATH}/x64/vc12/lib		
-   }  
+  LIB_SUFFIX = lib    
 
   CONFIG(debug, debug|release) {
-    LIBS += $${LIB_PATH}/opencv_world300d.$${LIB_SUFFIX} 
+    LIB_PATH = $${CV_PATH}/bin/vc2015_x86_amd64/lib	                
+    LIBS += $${LIB_PATH}/debug/opencv_core310d.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/debug/opencv_dnn310d.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/debug/opencv_face310d.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/debug/opencv_highgui310d.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/debug/opencv_imgproc310d.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/debug/opencv_imgcodecs310d.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/debug/opencv_ml310d.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/debug/opencv_video310d.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/debug/opencv_videoio310d.$${LIB_SUFFIX}
   } else {    
-    LIBS += $${LIB_PATH}/opencv_world300.$${LIB_SUFFIX}		
+    LIB_PATH = $${CV_PATH}/bin/vc2015_x86_amd64/lib	                
+    LIBS += $${LIB_PATH}/release/opencv_core310.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/release/opencv_dnn310.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/release/opencv_face310.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/release/opencv_highgui310.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/release/opencv_imgproc310.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/release/opencv_imgcodecs310.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/release/opencv_ml310.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/release/opencv_video310.$${LIB_SUFFIX}
+    LIBS += $${LIB_PATH}/release/opencv_videoio310.$${LIB_SUFFIX}
   } #config end
 
 } #win32 end
