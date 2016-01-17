@@ -1,12 +1,12 @@
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/tbb/tbb44_20151115oss_win_0/tbb44_20151115oss/include)
+include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/tbb/tbb44_20151115oss_win_0/tbb44_20151115oss/include)
 
 if(WIN32)
-    set(TBB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../3rdLibs/tbb/bin)
+    set(TBB_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/tbb/bin)
 	
 	set(VC_VERSION "vc2015_x86_amd64")
 	if(MSVC12)
 	    set(VC_VERSION "vc2013_x86_amd64")
-	endif
+	endif(MSVC12)
 	
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         if(MSVC14)		
