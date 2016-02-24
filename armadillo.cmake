@@ -3,6 +3,7 @@ if(CMAKE_SIZEOF_VOID_P EQUAL 8)
 endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 
 include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/armadillo/armadillo-5.600.2/include)
+add_definitions(-DARMA_USE_CXX11)
 
 if(WIN32)
     set(ARMA_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/armadillo/armadillo-5.600.2/bin)
