@@ -47,6 +47,7 @@ win32-msvc2013{
   }   
   
   LIBS += $${LIB_PATH}/opencv_world$${LIB_VER}.$${LIB_SUFFIX}
+  LIBS += $${CV_PATH}/build-opencv_hdf5-Desktop_Qt_5_6_0_MSVC2013_64bit-Release/release/opencv_hdf5.$${LIB_SUFFIX}
 
 } #win32 end
 
