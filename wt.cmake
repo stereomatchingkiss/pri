@@ -1,0 +1,50 @@
+CMAKE_MINIMUM_REQUIRED( VERSION 3.1 )
+
+if(WIN32)
+    if(CMAKE_BUILD_TYPE MATCHES Release)
+        set(WT_LIB_SUFFIX .lib)
+    endif(CMAKE_BUILD_TYPE MATCHES Release)
+	
+	if(CMAKE_BUILD_TYPE MATCHES Debug)
+        set(WT_LIB_SUFFIX d.lib)	   
+    endif(CMAKE_BUILD_TYPE MATCHES Debug)
+	
+    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+	    if(MSVC11)
+        set(WT_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/wt/win/vc2012/64)
+        set(BOOST_LIB_SUFFIX -vc110-mt-1_59.lib)
+        endif(MSVC11)
+		
+		if(MSVC12)
+        set(WT_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/wt/win/vc2013/64)
+        set(BOOST_LIB_SUFFIX -vc120-mt-1_59.lib)
+        endif(MSVC12)
+		
+		if(MSVC14)
+        set(WT_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/wt/win/vc2015/64)
+        set(BOOST_LIB_SUFFIX -vc140-mt-1_59.lib)
+        endif(MSVC14)		        
+    elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
+        message(FATAL_ERROR "only support 64bits")
+    endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
+else(WIN32)
+    message(FATAL_ERROR "do not support non windows platform yet")		
+endif(WIN32)
+
+set(WT_LIB_PATH ${WT_PATH}/lib)
+
+INCLUDE_DIRECTORIES(${WT_PATH}/include)
+#include(${CMAKE_CURRENT_LIST_DIR}/../pri/boost.cmake)
+
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libboost_date_time${BOOST_LIB_SUFFIX})
+
+#target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libhpdf${WT_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wthttp${WT_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wt${WT_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wtdbo${WT_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wtdbosqlite3${WT_LIB_SUFFIX})
+#target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wtdbofirebird${WT_LIB_SUFFIX})
+#target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wtdbomysql${WT_LIB_SUFFIX})
+#target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wtdbopostgres${WT_LIB_SUFFIX})
+#target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wtisapi${WT_LIB_SUFFIX})
+#target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wttest${WT_LIB_SUFFIX})
