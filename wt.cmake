@@ -37,6 +37,12 @@ INCLUDE_DIRECTORIES(${WT_PATH}/include)
 #include(${CMAKE_CURRENT_LIST_DIR}/../pri/boost.cmake)
 
 target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libboost_date_time${BOOST_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libboost_regex${BOOST_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libboost_program_options${BOOST_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libboost_signals${BOOST_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libboost_random${BOOST_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libboost_system${BOOST_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libboost_thread${BOOST_LIB_SUFFIX})
 
 #target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/libhpdf${WT_LIB_SUFFIX})
 target_link_libraries(${PROJECT_NAME} ${WT_LIB_PATH}/wthttp${WT_LIB_SUFFIX})
