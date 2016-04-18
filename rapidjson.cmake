@@ -1,0 +1,1 @@
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/rapidjson/include)
