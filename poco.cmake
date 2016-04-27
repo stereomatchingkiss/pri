@@ -1,0 +1,36 @@
+CMAKE_MINIMUM_REQUIRED( VERSION 3.1 )
+
+set(POCO_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/poco/poco-1.7.2-all)
+
+if(WIN32)    	
+    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+	    if(MSVC11)
+        set(POCO_LIB_PATH ${POCO_PATH}/vc2012_64/lib)
+        endif(MSVC11)					       
+    elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
+        message(FATAL_ERROR "only support 64bits")
+    endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
+	
+	if(CMAKE_BUILD_TYPE MATCHES Release)
+        set(POCO_LIB_SUFFIX .lib)
+		set(POCO_LIB_PATH ${POCO_LIB_PATH}/Release)
+    endif(CMAKE_BUILD_TYPE MATCHES Release)
+	
+	if(CMAKE_BUILD_TYPE MATCHES Debug)     
+	    message(FATAL_ERROR "do not support debug build yet")
+    endif(CMAKE_BUILD_TYPE MATCHES Debug)
+else(WIN32)
+    message(FATAL_ERROR "do not support non windows platform yet")		
+endif(WIN32)
+
+INCLUDE_DIRECTORIES(${POCO_PATH}/include)
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/openssl/openssl-1.0.1s-vs2012/include64)
+
+target_link_libraries(${PROJECT_NAME} ${POCO_LIB_PATH}/PocoFoundation${POCO_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${POCO_LIB_PATH}/PocoCrypto${POCO_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${POCO_LIB_PATH}/PocoUtil${POCO_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${POCO_LIB_PATH}/PocoNet${POCO_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${POCO_LIB_PATH}/PocoNetSSL${POCO_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${POCO_LIB_PATH}/PocoXML${POCO_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${POCO_LIB_PATH}/PocoJSON${POCO_LIB_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${POCO_LIB_PATH}/PocoZip${POCO_LIB_SUFFIX})
