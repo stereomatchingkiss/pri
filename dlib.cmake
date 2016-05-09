@@ -1,23 +1,32 @@
-include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/dlib/dlib-18.18)
+set(DLIB_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/dlib/dlib)
 
-if(WIN32)
-    set(DLIB_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/dlib/dlib-18.18/bin)
+if(WIN32)    
+    set(LIB_SUFFIX .lib)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         if(MSVC14)
             if(CMAKE_BUILD_TYPE MATCHES Release)
-                target_link_libraries(${PROJECT_NAME} ${DLIB_PATH}/vc2015_x86_amd64/release/dlib.lib)
+                target_link_libraries(${PROJECT_NAME} ${DLIB_PATH}/vc2015_64/dlib/Release)
             endif(CMAKE_BUILD_TYPE MATCHES Release)
 
             if(CMAKE_BUILD_TYPE MATCHES Debug)
-                target_link_libraries(${PROJECT_NAME} ${DLIB_PATH}/vc2015_x86_amd64/debug/dlib.lib)    
-            endif(CMAKE_BUILD_TYPE MATCHES Debug)
-
-        else(MSVC14)
-            message(FATAL_ERROR "only support msvc14")
+                target_link_libraries(${PROJECT_NAME} ${DLIB_PATH}/vc2015_64/dlib/Debug)    
+            endif(CMAKE_BUILD_TYPE MATCHES Debug)        
         endif(MSVC14)
-    else(CMAKE_SIZEOF_VOID_P EQUAL 8)
-        message(FATAL_ERROR "only support 64bits")
+		
+		if(MSVC12)
+            if(CMAKE_BUILD_TYPE MATCHES Release)
+                target_link_libraries(${PROJECT_NAME} ${DLIB_PATH}/vc2013_64/dlib/Release)
+            endif(CMAKE_BUILD_TYPE MATCHES Release)
+
+            if(CMAKE_BUILD_TYPE MATCHES Debug)
+                target_link_libraries(${PROJECT_NAME} ${DLIB_PATH}/vc2013_64/dlib/Debug)    
+            endif(CMAKE_BUILD_TYPE MATCHES Debug)        
+        endif(MSVC12)
     endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 else(WIN32)
     message(FATAL_ERROR "do not support non windows platform yet")
 endif(WIN32)
+
+
+include_directories(${DLIB_PATH})
+target_link_libraries(${PROJECT_NAME} ${DLIB_LIB_PATH}/dlib${LIB_SUFFIX})
