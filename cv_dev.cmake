@@ -10,7 +10,10 @@ if(WIN32)
         if(CMAKE_BUILD_TYPE MATCHES Release)
             if(MSVC12) #opencv-3.1.0\bin\vc2015_x86_amd64
                 set(CV_LIB_PATH ${CV_PATH}/vc2013_64/install/x64/vc12/lib)                                  
-            endif(MSVC12)        
+            endif(MSVC12)
+            if(MSVC14) #opencv-3.1.0\bin\vc2015_x86_amd64
+                set(CV_LIB_PATH ${CV_PATH}/vc2015_64/install/x64/vc14/lib)
+            endif(MSVC14)
         endif(CMAKE_BUILD_TYPE MATCHES Release)    
     endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 else(WIN32)
