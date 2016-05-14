@@ -9,12 +9,12 @@ win32-msvc2013{
   LIB_SUFFIX = lib
 
   !contains(QMAKE_TARGET.arch, x86_64) {
-        message("boost x86 build confirm")
-        LIBS += -L$${BOOST_PATH}/lib32-msvc-12.0
+     message("boost x86 build confirm")
+     LIBS += -L$${BOOST_PATH}/lib32-msvc-12.0
         ## Windows x86 (32bit) specific build here
    }else{
-        message("boost x64 build confirm")
-		LIBS += -L$${BOOST_PATH}/lib64-msvc-12.0
+     message("boost x64 build confirm")
+     LIBS += -L$${BOOST_PATH}/lib64-msvc-12.0
         ## Windows x64 (64bit) specific build here
    }     
 
