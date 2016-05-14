@@ -13,10 +13,10 @@ if(WIN32)
 	   set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/vc12)
 	endif(MSVC12)
 	
-	if(MSVC12)
+	if(MSVC14)
 	   add_definitions(-DOCV_SUPPORT_INTEL_TBB)
 	   set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/vc14)
-	endif(MSVC12)
+	endif(MSVC14)
 	
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         set(TBB_LIB_PATH ${TBB_PATH}/intel64)        	
