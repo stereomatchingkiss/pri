@@ -4,10 +4,11 @@ include(${CMAKE_CURRENT_LIST_DIR}/../pri/armadillo.cmake)
 
 add_definitions(-DNOMINMAX)
 
-include_directories(${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/mlpack/fork/mlpack/src)
+set(MLPACK_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/mlpack/fork/mlpack)
 
-if(WIN32)
-    set(MLPACK_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/mlpack/fork/mlpack)
+include_directories(${MLPACK_PATH}/src)
+
+if(WIN32)    
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
         if(MSVC14)
             if(CMAKE_BUILD_TYPE MATCHES Release)
