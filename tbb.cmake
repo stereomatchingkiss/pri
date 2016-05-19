@@ -1,28 +1,28 @@
 set(TBB_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/tbb)
 
 if(WIN32)
-    include_directories(${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/include)
+  include_directories(${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/include)
+
+  if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+     set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/intel64)
+  else(CMAKE_SIZEOF_VOID_P EQUAL 8)
+     set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/ia32)
+  endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 	
 	if(MSVC11)
 	   add_definitions(-DOCV_SUPPORT_INTEL_TBB)
-	   set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/vc11)
+     set(TBB_LIB_PATH ${TBB_LIB_PATH}/vc11)
 	endif(MSVC11)
 	
 	if(MSVC12)
 	   add_definitions(-DOCV_SUPPORT_INTEL_TBB)
-	   set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/vc12)
+     set(TBB_LIB_PATH ${TBB_LIB_PATH}/vc12)
 	endif(MSVC12)
 	
 	if(MSVC14)
 	   add_definitions(-DOCV_SUPPORT_INTEL_TBB)
-	   set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/vc14)
-	endif(MSVC14)
-	
-  if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-     set(TBB_LIB_PATH ${TBB_LIB_PATH}/intel64)
-	else(CMAKE_SIZEOF_VOID_P EQUAL 8)
-     set(TBB_LIB_PATH ${TBB_LIB_PATH}/ia32)
-	endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
+     set(TBB_LIB_PATH ${TBB_LIB_PATH}/vc14)
+	endif(MSVC14) 
 	
 	if(CMAKE_BUILD_TYPE MATCHES Release)
         set(TBB_LIB_TYPE .lib)            
