@@ -1,12 +1,12 @@
 set(TBB_PATH ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/tbb)
 
 if(WIN32)
-  include_directories(${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/include)
+  include_directories(${TBB_PATH}/tbb44_20160413oss/include)
 
   if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-     set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/intel64)
+     set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20160413oss/lib/intel64)
   else(CMAKE_SIZEOF_VOID_P EQUAL 8)
-     set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20151115oss_win_0/tbb44_20151115oss/lib/ia32)
+     set(TBB_LIB_PATH ${TBB_PATH}/tbb44_20160413oss/lib/ia32)
   endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 	
 	if(MSVC11)
