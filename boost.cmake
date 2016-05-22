@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED( VERSION 3.1 )
 
-set(BOOST_ROOT ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/boost/boost_1_59_0)
+set(BOOST_ROOT ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/boost/boost_1_61_0)
 set(BOOST_INCLUDEDIR ${BOOST_ROOT}/boost)
 
 FIND_PACKAGE(Boost)
@@ -9,7 +9,7 @@ IF (Boost_FOUND)
     ADD_DEFINITIONS( "-DHAS_BOOST" )
 ENDIF()
 
-set(BOOST_SUFFIX -mt-1_59.lib)
+set(BOOST_SUFFIX -mt-1_61.lib)
 
 if(WIN32)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
