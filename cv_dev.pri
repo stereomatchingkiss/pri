@@ -66,3 +66,4 @@ LIBS += $${LIB_PATH}/opencv_videoio$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_video$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_objdetect$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_ximgproc$${CV_LIB_VER}$${LIB_SUFFIX}
+LIBS += $${LIB_PATH}/opencv_img_hash$${CV_LIB_VER}$${LIB_SUFFIX}
