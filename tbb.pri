@@ -11,7 +11,7 @@ win32-msvc2013{
         error("Do not support x86")        
    }else{
         message("tbb x64 build confirm")
-        LIB_PATH = $$PWD/../3rdLibs/tbb/bin/vc2013_x86_amd64
+        LIB_PATH = $$PWD/../3rdLibs/tbb/tbb44_20160413oss/lib/intel64/vc12
    }  
 
 } #win32 2013 end
@@ -23,17 +23,17 @@ win32-msvc2015{
         error("Do not support x86")        
    }else{
         message("tbb x64 build confirm")
-        LIB_PATH = $$PWD/../3rdLibs/tbb/bin/vc2015_x86_amd64
+        LIB_PATH = $$PWD/../3rdLibs/tbb/tbb44_20160413oss/lib/intel64/vc14
    }  
 
 } #win32 2015 end
 
 CONFIG(debug, debug|release) {
-    LIBS += $${LIB_PATH}/debug/tbb_debug.lib
-    LIBS += $${LIB_PATH}/debug/tbbmalloc_debug.lib
-	LIBS += $${LIB_PATH}/debug/tbbmalloc_proxy_debug.lib
+    LIBS += $${LIB_PATH}/tbb_debug.lib
+    LIBS += $${LIB_PATH}/tbbmalloc_debug.lib
+    LIBS += $${LIB_PATH}/tbbmalloc_proxy_debug.lib
   } else {    
-    LIBS += $${LIB_PATH}/release/tbb.lib
-    LIBS += $${LIB_PATH}/release/tbbmalloc.lib
-	LIBS += $${LIB_PATH}/release/tbbmalloc_proxy.lib
+    LIBS += $${LIB_PATH}/tbb.lib
+    LIBS += $${LIB_PATH}/tbbmalloc.lib
+    LIBS += $${LIB_PATH}/tbbmalloc_proxy.lib
   } #config end
