@@ -1,0 +1,1 @@
+INCLUDEPATH += $$PWD/../3rdLibs
