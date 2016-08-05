@@ -1,7 +1,5 @@
 CV_PATH = $$PWD/../3rdLibs/opencv/dev
 
-INCLUDEPATH += $${CV_PATH}/vc2013_64/install/include
-
 CV_LIB_VER = 310
 LIB_SUFFIX = a
 
@@ -15,6 +13,7 @@ win32{
 
 win32-msvc2013{
 
+  INCLUDEPATH += $${CV_PATH}/vc2013_64/install/include
   !contains(QMAKE_TARGET.arch, x86_64) {
      message("x86 build confirm")
      #LIB_PATH = $${CV_PATH}/vc2013_64/lib/Release
@@ -27,9 +26,10 @@ win32-msvc2013{
 
 win32-msvc2015{
 
+  INCLUDEPATH += $${CV_PATH}/vc2015_64/install/include
   !contains(QMAKE_TARGET.arch, x86_64) {
      message("x86 build confirm")
-     #LIB_PATH = $${CV_PATH}/vc2015_64/install/x64/vc14/lib
+     LIB_PATH = $${CV_PATH}/vc2015_32/install/x86/vc14/lib
    }else{
      message("x86_64 build confirm")
      LIB_PATH = $${CV_PATH}/vc2015_64/install/x64/vc14/lib
@@ -56,7 +56,7 @@ LIBS += $${LIB_PATH}/opencv_ccalib$${CV_LIB_VER}$${LIB_SUFFIX}
 #LIBS += $${LIB_PATH}/opencv_dpm$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_features2d$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_flann$${CV_LIB_VER}$${LIB_SUFFIX}
-LIBS += $${LIB_PATH}/opencv_hdf$${CV_LIB_VER}$${LIB_SUFFIX}
+#LIBS += $${LIB_PATH}/opencv_hdf$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_highgui$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_imgproc$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_imgcodecs$${CV_LIB_VER}$${LIB_SUFFIX}
