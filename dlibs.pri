@@ -10,8 +10,12 @@ win32-msvc2015{
 
   CONFIG(debug, debug|release) {
     LIB_PATH = $${DLIB_PATH}/vc2015_64/dlib/Debug
-  } else {    
-    LIB_PATH = $${DLIB_PATH}/vc2015_64/dlib/Release
+  } else {
+    contains(DEFINES, DLIB_USE_CUDA) {
+      LIB_PATH = $${DLIB_PATH}/vc2015_64/dlib/Release
+    } else {
+      LIB_PATH = $${DLIB_PATH}/vc2015_64/dlib/ReleaseCpu
+    }
   } #config end
 
 }
