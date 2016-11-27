@@ -1,5 +1,5 @@
-INCLUDEPATH += $$PWD/../3rdLibs
-SEETA_PATH = $$PWD/../3rdLibs/SeetaFaceEngine
+INCLUDEPATH += $$PWD/../3rdLibs/SeetaFaceEngine
+SEETA_PATH = $$PWD/../3rdLibs/SeetaFaceEngine/SeetaFaceEngine
 
 LIB_SUFFIX = a
 
