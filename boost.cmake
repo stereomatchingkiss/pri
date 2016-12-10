@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED( VERSION 3.1 )
 
-set(BOOST_ROOT ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/boost/boost_1_61_0)
+set(BOOST_ROOT ${CMAKE_CURRENT_LIST_DIR}/../3rdLibs/boost/boost_1_62_0)
 set(BOOST_INCLUDEDIR ${BOOST_ROOT}/boost)
 
 FIND_PACKAGE(Boost)
@@ -9,7 +9,7 @@ IF (Boost_FOUND)
     ADD_DEFINITIONS( "-DHAS_BOOST" )
 ENDIF()
 
-set(BOOST_SUFFIX -mt-1_61.lib)
+set(BOOST_SUFFIX -mt-1_62.lib)
 
 if(WIN32)
     if(CMAKE_SIZEOF_VOID_P EQUAL 8)
@@ -44,6 +44,7 @@ else(WIN32)
     message(FATAL_ERROR "do not support non windows platform yet")		
 endif(WIN32)
 
+target_link_libraries(${PROJECT_NAME} ${BOOST_LIBRARYDIR}/libboost_regex${BOOST_COMPILER}${BOOST_SUFFIX})
 target_link_libraries(${PROJECT_NAME} ${BOOST_LIBRARYDIR}/libboost_filesystem${BOOST_COMPILER}${BOOST_SUFFIX})
 target_link_libraries(${PROJECT_NAME} ${BOOST_LIBRARYDIR}/libboost_system${BOOST_COMPILER}${BOOST_SUFFIX})
 

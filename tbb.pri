@@ -1,4 +1,4 @@
-TBB_PATH = $$PWD/../3rdLibs/tbb/tbb44_20151115oss_win_0/tbb44_20151115oss
+TBB_PATH = $$PWD/../3rdLibs/tbb/tbb2017_20161004oss
 
 INCLUDEPATH += $${TBB_PATH}/include
 
@@ -11,7 +11,7 @@ win32-msvc2013{
         error("Do not support x86")        
    }else{
         message("tbb x64 build confirm")
-        LIB_PATH = $$PWD/../3rdLibs/tbb/tbb44_20160413oss/lib/intel64/vc12
+        LIB_PATH = $${TBB_PATH}/lib/intel64/vc12
    }  
 
 } #win32 2013 end
@@ -23,7 +23,7 @@ win32-msvc2015{
         error("Do not support x86")        
    }else{
         message("tbb x64 build confirm")
-        LIB_PATH = $$PWD/../3rdLibs/tbb/tbb44_20160413oss/lib/intel64/vc14
+        LIB_PATH = $${TBB_PATH}/lib/intel64/vc14
    }  
 
 } #win32 2015 end

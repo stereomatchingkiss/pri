@@ -1,4 +1,4 @@
-BOOST_PATH = $$PWD/../3rdLibs/boost/boost_1_59_0
+BOOST_PATH = $$PWD/../3rdLibs/boost/boost_1_62_0
 
 INCLUDEPATH += $${BOOST_PATH}
 

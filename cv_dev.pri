@@ -47,12 +47,12 @@ win32-msvc2015{
 #LIBS += $${LIB_PATH}/zlib$${LIB_SUFFIX}
 
 #LIBS += $${LIB_PATH}/opencv_aruco$${CV_LIB_VER}$${LIB_SUFFIX}
-#LIBS += $${LIB_PATH}/opencv_bgsegm$${CV_LIB_VER}$${LIB_SUFFIX}
+LIBS += $${LIB_PATH}/opencv_bgsegm$${CV_LIB_VER}$${LIB_SUFFIX}
 #LIBS += $${LIB_PATH}/opencv_bioinspired$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_core$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_calib3d$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_ccalib$${CV_LIB_VER}$${LIB_SUFFIX}
-#LIBS += $${LIB_PATH}/opencv_dnn$${CV_LIB_VER}$${LIB_SUFFIX}
+LIBS += $${LIB_PATH}/opencv_dnn$${CV_LIB_VER}$${LIB_SUFFIX}
 #LIBS += $${LIB_PATH}/opencv_dpm$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_features2d$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_flann$${CV_LIB_VER}$${LIB_SUFFIX}
@@ -65,5 +65,6 @@ LIBS += $${LIB_PATH}/opencv_imgcodecs$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_videoio$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_video$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_objdetect$${CV_LIB_VER}$${LIB_SUFFIX}
+LIBS += $${LIB_PATH}/opencv_tracking$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_ximgproc$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_img_hash$${CV_LIB_VER}$${LIB_SUFFIX}

@@ -20,12 +20,12 @@ win32-msvc2013{
   LIBS += $${LIB_PATH}/libzlib.$${LIB_SUFFIX}
   LIBS += $${LIB_PATH}/libhdf5.$${LIB_SUFFIX}
   LIBS += $${LIB_PATH}/libhdf5_cpp.$${LIB_SUFFIX}
-  LIBS += $${LIB_PATH}/libhdf5_f90cstub.$${LIB_SUFFIX}
-  LIBS += $${LIB_PATH}/libhdf5_fortran.$${LIB_SUFFIX}
+  #LIBS += $${LIB_PATH}/libhdf5_f90cstub.$${LIB_SUFFIX}
+  #LIBS += $${LIB_PATH}/libhdf5_fortran.$${LIB_SUFFIX}
   LIBS += $${LIB_PATH}/libhdf5_hl.$${LIB_SUFFIX}
   LIBS += $${LIB_PATH}/libhdf5_hl_cpp.$${LIB_SUFFIX}
-  LIBS += $${LIB_PATH}/libhdf5_hl_f90cstub.$${LIB_SUFFIX}
-  LIBS += $${LIB_PATH}/libhdf5_hl_fortran.$${LIB_SUFFIX}
+  #LIBS += $${LIB_PATH}/libhdf5_hl_f90cstub.$${LIB_SUFFIX}
+  #LIBS += $${LIB_PATH}/libhdf5_hl_fortran.$${LIB_SUFFIX}
   LIBS += $${LIB_PATH}/libhdf5_tools.$${LIB_SUFFIX}
 } #win32 end
 
