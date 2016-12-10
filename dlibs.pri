@@ -32,6 +32,10 @@ win32-msvc2013{
 
 } #win32 end
 
+win32{
+    LIBS += $${LIB_PATH}/dlib$${LIB_SUFFIX}
+}
+
 linux-g++ {
     CONFIG(debug, debug|release) {
         #LIB_PATH = $${DLIB_PATH}/vc2013_64/dlib/Debug
@@ -42,7 +46,7 @@ linux-g++ {
     LIBS += $${LIB_PATH}/libdlib.a
 } #linux-g++ end
 
-
-win32{
-    LIBS += $${LIB_PATH}/dlib$${LIB_SUFFIX}
+unix{
+    LIBS += -lX11
+    LIBS += -lXext
 }
