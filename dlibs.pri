@@ -40,10 +40,10 @@ linux-g++ {
     CONFIG(debug, debug|release) {
         #LIB_PATH = $${DLIB_PATH}/vc2013_64/dlib/Debug
     } else {
-        LIB_PATH = $${DLIB_PATH}/gcc_linux/dlib
+        #LIB_PATH = $${DLIB_PATH}/gcc_linux/dlib
     } #config end
     LIBS += -pthread
-    LIBS += $${LIB_PATH}/libdlib.a
+    LIBS += -ldlib
 } #linux-g++ end
 
 unix{
