@@ -1,9 +1,8 @@
-CV_PATH = $$PWD/../3rdLibs/opencv/dev
-
 CV_LIB_VER = 310
 LIB_SUFFIX = a
 
 win32{
+  CV_PATH = $$PWD/../3rdLibs/opencv/dev
   CONFIG(debug, debug|release) {
     LIB_SUFFIX = d.lib
   } else {
@@ -37,6 +36,8 @@ win32-msvc2015{
 
 } #win32-msvc2015 end
 
+win32{
+
 #LIBS += $${LIB_PATH}/IlmImf$${LIB_SUFFIX}
 #LIBS += $${LIB_PATH}/ippicvmt$${LIB_SUFFIX}
 #LIBS += $${LIB_PATH}/libjasper$${LIB_SUFFIX}
@@ -68,3 +69,14 @@ LIBS += $${LIB_PATH}/opencv_objdetect$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_tracking$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_ximgproc$${CV_LIB_VER}$${LIB_SUFFIX}
 LIBS += $${LIB_PATH}/opencv_img_hash$${CV_LIB_VER}$${LIB_SUFFIX}
+
+}
+
+linux-g++ {
+   INCLUDEPATH += /usr/local/include
+
+   LIBS += -L/usr/local/cuda/lib64 -lcuda -lcudart -lcurand -lcublas
+   LIBS += -L/usr/lib -llapack -lblas
+
+   LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs
+}
