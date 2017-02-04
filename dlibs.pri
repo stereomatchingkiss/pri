@@ -37,11 +37,9 @@ win32{
 }
 
 linux-g++ {
-    CONFIG(debug, debug|release) {
-        #LIB_PATH = $${DLIB_PATH}/vc2013_64/dlib/Debug
-    } else {
-        #LIB_PATH = $${DLIB_PATH}/gcc_linux/dlib
-    } #config end
+    contains(DEFINES, DLIB_USE_CUDA) {
+      LIBS += -L/usr/local/cuda-8.0/lib64 -lcuda -lcudart -lcurand -lcublas -lcudnn
+    }
     LIBS += -pthread
     LIBS += -ldlib
 } #linux-g++ end
