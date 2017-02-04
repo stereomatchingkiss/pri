@@ -1,4 +1,4 @@
-CV_LIB_VER = 310
+CV_LIB_VER = 320
 LIB_SUFFIX = a
 
 win32{
@@ -72,10 +72,12 @@ LIBS += $${LIB_PATH}/opencv_img_hash$${CV_LIB_VER}$${LIB_SUFFIX}
 
 }
 
-linux-g++ {
+linux-g++ {   
    INCLUDEPATH += /usr/local/include
+   contains(DEFINES, OPENCV_USE_CUDA) {
+      LIBS += -L/usr/local/cuda-8.0/lib64 -lcuda -lcudart -lcurand -lcublas -lcudnn
+   }
 
-   LIBS += -L/usr/local/cuda/lib64 -lcuda -lcudart -lcurand -lcublas
    LIBS += -L/usr/lib -llapack -lblas
 
    LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs
