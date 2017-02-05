@@ -41,6 +41,7 @@ linux-g++ {
       LIBS += -L/usr/local/cuda-8.0/lib64 -lcuda -lcudart -lcurand -lcublas -lcudnn
     }
     LIBS += -pthread
+    LIBS += -L/usr/lib -llapack -lblas
     LIBS += -ldlib
 } #linux-g++ end
 
