@@ -12,7 +12,7 @@ win32-msvc2015{
     LIB_PATH = $${DLIB_PATH}/vc2015_64/dlib/Debug
   } else {
     contains(DEFINES, DLIB_USE_CUDA) {
-      LIB_PATH = $${DLIB_PATH}/vc2015_64/dlib/Release
+      LIB_PATH = $${DLIB_PATH}/vc2015_64/dlib/ReleaseGpu
     } else {
       LIB_PATH = $${DLIB_PATH}/vc2015_64/dlib/ReleaseCpu
     }
