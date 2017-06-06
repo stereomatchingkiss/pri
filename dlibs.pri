@@ -38,7 +38,7 @@ win32{
 
 linux-g++ {
     contains(DEFINES, DLIB_USE_CUDA) {
-      LIBS += -L/usr/local/cuda-8.0/lib64 -lcuda -lcudart -lcurand -lcublas -lcudnn
+      LIBS += -L/usr/local/cuda-8.0/lib64 -lcuda -lcudart -lcurand -lcublas -lcudnn -lcusolver
     }
     LIBS += -pthread
     LIBS += -L/usr/lib -llapack -lblas
