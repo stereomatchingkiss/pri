@@ -21,7 +21,10 @@ win32-msvc2015{
      LIB_PATH = $${QWT_PATH}/vc2015_64/lib
    }
 
+   LIBS += $${LIB_PATH}/qwt$${LIB_SUFFIX}
 } #win32-msvc2015 end
 
-
-LIBS += $${LIB_PATH}/qwt$${LIB_SUFFIX}
+linux-g++ {
+  LIB_PATH = $${QWT_PATH}/qwt-6.1.3/lib
+  LIBS += $${LIB_PATH}/libqwt.$${LIB_SUFFIX}
+}
